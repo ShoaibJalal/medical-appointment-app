@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Asap } from "next/font/google";
 import "./globals.css";
-import { cn } from "./lib/utils";
-import { ThemeProvider } from "@/components/theme-provider";
+import { cn } from "@/lib/utils";
+import { ThemeProvider } from "../components/theme-provider";
 
 const fontSans = Asap({
   subsets: ["latin"],
@@ -13,6 +13,9 @@ const fontSans = Asap({
 export const metadata: Metadata = {
   title: "Care Plan",
   description: "Healthcare app by create next app",
+  icons: {
+    icon: "/assets/icons/logo-icon.svg",
+  },
 };
 
 export default function RootLayout({
