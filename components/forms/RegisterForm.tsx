@@ -5,13 +5,13 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import Image from "next/image";
 import { Form, FormControl } from "@/components/ui/form";
-import CustomFormField from "../CustomFormField";
+import CustomFormField, { FormFieldType } from "../CustomFormField";
 import SubmitButton from "../SubmitButton";
 import { useState } from "react";
 import { PatientFormValidation } from "@/lib/validation";
 import { useRouter } from "next/navigation";
 import {  registerPatient } from "@/lib/actions/patient.actions";
-import { FormFieldType } from "./PatientForm";
+
 import { RadioGroup, RadioGroupItem } from "../ui/radio-group";
 import {
   Doctors,

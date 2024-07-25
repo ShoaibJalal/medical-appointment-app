@@ -1,29 +1,23 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import { Form } from "@/components/ui/form";
-import CustomFormField from "../CustomFormField";
-import SubmitButton from "../SubmitButton";
-import { useState } from "react";
-import { UserFormValidation } from "@/lib/validation";
-import { useRouter } from "next/navigation";
-import { createUser } from "@/lib/actions/patient.actions";
 
-export enum FormFieldType {
-  INPUT = "input",
-  TEXTAREA = "textarea",
-  PHONE_INPUT = "phoneInput",
-  CHECKBOX = "checkbox",
-  DATE_PICKER = "datePicker",
-  SELECT = "select",
-  SKELETON = "skeleton",
-}
+import { Form } from "@/components/ui/form";
+import { createUser } from "@/lib/actions/patient.actions";
+import { UserFormValidation } from "@/lib/validation";
+
+import "react-phone-number-input/style.css";
+import CustomFormField, { FormFieldType } from "../CustomFormField";
+import SubmitButton from "../SubmitButton";
 
 export const PatientForm = () => {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
+
   const form = useForm<z.infer<typeof UserFormValidation>>({
     resolver: zodResolver(UserFormValidation),
     defaultValues: {
@@ -33,20 +27,23 @@ export const PatientForm = () => {
     },
   });
 
-  const onSubmit = async ({name,email,phone}: z.infer<typeof UserFormValidation>) => {
+  const onSubmit = async ({
+    name,
+    email,
+    phone,
+  }: z.infer<typeof UserFormValidation>) => {
     setIsLoading(true);
     try {
       const userData = {
         name,
-        email, 
-        phone
+        email,
+        phone,
       };
 
-     
-      const user = await createUser(userData);
+      const newUser = await createUser(userData);
 
-      if (user) {
-        router.push(`/patients/${user.$id}/register`);
+      if (newUser) {
+        router.push(`/patients/${newUser.$id}/register`);
       }
     } catch (error) {
       console.log(error);

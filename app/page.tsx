@@ -11,13 +11,16 @@ const Home = ({ searchParams }: SearchParamProps) => {
       <section className="remove-scrollbar container my-auto">
     
         <div className="sub-container max-w-[496px]">
-          <Image
-            src="/assets/icons/logo-full.svg"
-            height={1000}
-            width={1000}
-            alt="patient"
-            className="mb-12 h-10 w-fit"
-          />
+        <p className="sub-header mb-12 h-10">
+            <Image
+              src="/assets/icons/logo-icon.svg"
+              height={1000}
+              width={1000}
+              alt="logo"
+              className=" w-fit inline-flex"
+            /> Care Plan
+          </p>
+
         
           <PatientForm />
           <div className="text-14-regular mt-20 flex justify-between">
