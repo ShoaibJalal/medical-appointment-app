@@ -41,9 +41,10 @@ export const columns: ColumnDef<Appointment>[] = [
     accessorKey: "schedule",
     header: "Appointment",
     cell: ({ row }) => {
+      const appointment = row.original;
       return (
         <p className="text-14-regular min-w-[100px]">
-          {formatDateTime(row.original.schedule).dateTime}
+          {formatDateTime(appointment.schedule).dateTime}
         </p>
       );
     },
@@ -94,7 +95,7 @@ export const columns: ColumnDef<Appointment>[] = [
             appointment={appointment}
             type="cancel"
             title="Cancel Appointment"
-            description="Are you sure you want to cancel your appointment?"
+            description="Are you sure you want to cancel this appointment?"
           />
         </div>
       );

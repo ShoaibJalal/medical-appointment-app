@@ -22,6 +22,8 @@ export const AppointmentModal = ({
   userId,
   appointment,
   type,
+  title,
+  description
 }: {
   patientId: string;
   userId: string;
@@ -44,9 +46,9 @@ export const AppointmentModal = ({
       </DialogTrigger>
       <DialogContent className="shad-dialog sm:max-w-md">
         <DialogHeader className="mb-4 space-y-3">
-          <DialogTitle className="capitalize">{type} Appointment</DialogTitle>
+          <DialogTitle className="capitalize">{title}</DialogTitle>
           <DialogDescription>
-            Please fill in the following details to {type} appointment
+            {description}
           </DialogDescription>
         </DialogHeader>
 
