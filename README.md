@@ -30,6 +30,7 @@ A healthcare patient management application that allows patients to easily regis
 👉 **File Upload Using Appwrite Storage**: Users can upload and store files securely within the app using Appwrite storage services.
 and many more, including code architecture and reusability
 
+👉 **Manage and Track Application Performance Using Sentry**: The application uses Sentry to monitor and track its performance and detect any errors.
 
 ## <a name="quick-start">🤸 Quick Start</a>
 
