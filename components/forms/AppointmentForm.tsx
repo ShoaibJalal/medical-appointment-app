@@ -33,7 +33,7 @@ export const AppointmentForm = ({
 	patientId: string;
 	type: "create" | "schedule" | "cancel";
 	appointment?: Appointment;
-	setOpen: (open: boolean) => void;
+	setOpen?: (open: boolean) => void;
 }) => {
 	const router = useRouter();
 	const [isLoading, setIsLoading] = useState(false);

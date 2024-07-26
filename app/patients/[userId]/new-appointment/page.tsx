@@ -1,4 +1,4 @@
-import AppointmentForm from "@/components/forms/AppointmentForm";
+import {AppointmentForm} from "@/components/forms/AppointmentForm";
 import Image from "next/image";
 import { getPatient } from "@/lib/actions/patient.actions";
 import * as Sentry from "@sentry/nextjs";
